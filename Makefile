@@ -1,4 +1,4 @@
-GCC	:= gcc
+GCC := gcc
 RM := rm
 TARGET := 537malloc
 CPPFLAGS := -pthread -Wall -Wextra -g

@@ -1,0 +1,34 @@
+SECTION 1:
+---------------------
+simple_testcase1: Test basic funtionality of malloc537, free537, memcheck537
+
+simple_testcase2: Allocating memory of size 0
+
+simple_testcase5: Allocating a memory and then reallocating for a bigger size
+
+SECTION 2:
+---------------------
+advanced_testcase1 : Sequential allocation of 1 byte : alloc, memcheck, free
+
+advanced_testcase2 : Allocating random sizes for 10 million times and freeing them randomly
+
+advanced_testcase3 : Allocating usnig malloc, realloc(ptr, 0)
+
+advanced_testcase4 : Reallocating random sizes
+
+SECTION 3:
+---------------------
+simple_testcase4: Freeing an already freed pointer (Double free)
+
+error_testcase2 : Freeing (ptr + 5)
+
+error_testcase3 : Memcheck at invalid address (ptr - 10) 
+
+overlap_testcase : Test if freeing & reallocation implemented correctly
+	-> Create a 4K block of memory using malloc537()
+	-> Free the 4K block using free537()
+	-> Alloc malloc() of 1K block
+	-> Alloc malloc537() of 1K block --> should happen
+		--> Assert if the allocated blocks are not within the 1st allocated 4K block
+	-> free537() free the above block allocated by malloc537() --> Should happen
+	-> free537() free the same block again --> double free error

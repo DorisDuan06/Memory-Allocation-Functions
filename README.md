@@ -15,13 +15,13 @@ In __537malloc.c__, it includes  `malloc537()`, `free537()`, `realloc537()` and 
 1. Allocate memory of zero length.
 #### ERRORS:
 1. `malloc()` failure.
-
+---
 ### free537()
 #### ERRORS:
 1. Free memory that has not be allocated with `malloc537()`.
 2. Free memory that is not the first byte of the range of memory that was allocated.
 3. Free memory that was previously freed (double free).
-
+---
 ### realloc537()
 #### WARNINGS:
 1. Reallocate memory of zero length.
